@@ -1,0 +1,2 @@
+user1 ALL=(root) /usr/bin/date
+

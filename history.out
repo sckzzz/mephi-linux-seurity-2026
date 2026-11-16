@@ -1,0 +1,298 @@
+    1  sudo apt update
+    2  sudo apt upgrade
+    3  whoami
+    4  pwd
+    5  ls
+    6  mkdir linux-practice
+    7  cd linux-practice
+    8  touch notes.txt
+    9  ls -l
+   10  pwd
+   11  ls
+   12  cd notes.txt
+   13  man ls
+   14  clear
+   15  exit
+   16  ls documents
+   17  ls files
+   18  pwd
+   19  cd files
+   20  cd home
+   21  ls
+   22  ls -l home
+   23  pwd
+   24  ls Documents
+   25  ls -l Documents
+   26  ls linux-practice
+   27  ls -l linux-practice
+   28  ls -hl linux-practice/
+   29  ls Pictures/
+   30  ls -ahl linux-practice/
+   31  pwd
+   32  clear
+   33  ls 
+   34  ls Templates/
+   35  ls Desktop/
+   36  ls Public/
+   37  ls Downloads/
+   38  ls -ahl Downloads/
+   39  clerar
+   40  clear
+   41  ls 
+   42  ls -ahl 
+   43  clear
+   44  ls 
+   45  cd Desktop/
+   46  mkdir linux-desktop
+   47  cd linux-desktop/
+   48  touch notes.txt
+   49  ls
+   50  rm notes.txt 
+   51  ls
+   52  rmdir linux-desktop 
+   53  cd Desktop 
+   54  cd
+   55  cd Desktop/
+   56  rmdir linux-desktop/
+   57  cd
+   58  ls
+   59  dsadasdm,[200~dsadasdm,
+   60  ~pwd
+   61  clear
+   62  pwd
+   63  /
+   64  cd /
+   65  pwd
+   66  cd root
+   67  pwd
+   68  cd home 
+   69  pwd
+   70  cd maksim/
+   71  pwd
+   72  .
+   73  clear
+   74  pwd
+   75  ..
+   76  cd ..
+   77  cd .
+   78  pwd
+   79  cd ..
+   80  pwd
+   81  cd .
+   82  pwd
+   83  cd 
+   84  pwdf
+   85  pwd
+   86  cd Desktop/
+   87  mkdir put1
+   88  mkdir put2
+   89  cd put1
+   90  touch aaa.txt
+   91  cd put2
+   92  cd 
+   93  cd Desktop/
+   94  cd put1
+   95  /
+   96  .
+   97  cd .
+   98  cd ..
+   99  cd put2
+  100  pwd
+  101  touch bb.txt 
+  102  cd ..
+  103  cp aaa.txt put2
+  104  cd put1/
+  105  cp aaa.txt put2
+  106  cd ..
+  107  cd put2
+  108  ls
+  109  mv bb.txt put1
+  110  cd ..
+  111  cd put1
+  112  ls 
+  113  ls -ahl
+  114  lc 
+  115  lc
+  116  ls
+  117  ls -l
+  118  pwd
+  119  rm put2 
+  120  ls 
+  121  cd .. 
+  122  rmdir put1 put2
+  123  rmdir put1
+  124  pwd
+  125  ls
+  126  rmdir put1/
+  127  rm -r put1
+  128  rm -r put2/
+  129  ls 
+  130  ls
+  131  ls -l
+  132  ls -a
+  133  ls -h
+  134  ls -al
+  135  clear
+  136  pwd
+  137  cd 
+  138  pwd
+  139  ls 
+  140  cd linux-practice/
+  141  mkdir my_dir
+  142  touch my_dir/f1.txt
+  143  cd my_dir/
+  144  touch f2.txt 
+  145  ls 
+  146  cd ..
+  147  cp -r my_dir my_dir2
+  148  ls
+  149  ls my_dir2
+  150  ls my_dir
+  151  mv my_dir/f1.txt my_dir2/f.doc
+  152  cd my_dir2
+  153  ls 
+  154  rm -r ../my_dir
+  155  cd ../
+  156  ls
+  157  ls 
+  158  rm -r my_dir2
+  159  ls 
+  160  cd ..
+  161  pwd
+  162  clear
+  163  firefox
+  164  exit
+  165  getent passwd 1234
+  166  sudo groupadd -f students
+  167  sudo useradd -m -u 1234 -g students -s /bin/bash user1
+  168  getent passwd 1234
+  169  getent passwd user1
+  170  sudo passwd user1
+  171  sudo chage -M 90 user1
+  172  id user1
+  173  sudo chage -l user1
+  174  ls -ld /home/user1
+  175  sudo find / -type f -perm -4000 -print > ~/suid-files.out 2> ~/suid-find-errors.out
+  176  cat 
+  177  cat ~/suid-files.out
+  178  su -user1
+  179  passwd 
+  180  su -user1
+  181  su - user1
+  182  printf '%s\n' 'Учебный файл. Номер студента: M265303' | sudo tee /root/mephi-secret.txt > /dev/null
+  183  sudo chmod 600 /root/mephi-secret.txt
+  184  sudo cp /usr/bin/cat /home/user1/cat-suid
+  185  sudo chown root:root /home/user1/cat-suid
+  186  sudo chmod 755 /home/user1/cat-suid
+  187  sudo -u user1 /home/user1//cat-suid /root/mephi-secret.txtt
+  188  sudo -u user1 /home/user1//cat-suid /root/mephi-secret.txt
+  189  ls -l /usr/bin/cat /home/user1/cat-suid
+  190  /usr/ba/cat --version
+  191  /home/user1/cat-suid --version 
+  192  /usr/bin/cat --version
+  193  sudo -u user1 /home/user1/cat-suid --version
+  194  sudo mkdir -p /home/user1/suid-demo
+  195  sudo cp -L /usr/bin/cat /home/user1/suid-demo/cat
+  196  sudo chown root:root /home/user1/suid-demo /home/user1/suid-demo/cat
+  197  sudo chmod 755 /home/user1/suid-demo /home/user1/suid-demo/cat
+  198  sudo -u user1 /home/user1/suid-demo/cat --version 
+  199  sudo -u user1 /home/user1/suid-demo/cat /root/mephi-secret.txt
+  200  sudo chmod 4755 /home/user1/suid-demo/cat
+  201  sudo -u user1 /home/user1/suid-demo/cat /root/mephi-secret.txt
+  202  sudo ls -l /home/user1/suid-demo/cat
+  203  sudo apt update 
+  204  sudo apt install libcap2-bin
+  205  sudo mkdir -p /home/user1/cap-demo
+  206  sudo cp -L /usr/bin/chown /home/user1/cat-demo/chown
+  207  sudo cp -L /usr/bin/chown /home/user1/cap-demo/chown
+  208  sudo chown root:root /home/user1/cap-demo/ /home/user1/cap-demo/chown
+  209  sudo chmod 755 /home/user1/cap-demo /home/user1/cap-demo/chown
+  210  sudo -u user1 touch /home/user1/cap-demo-file
+  211  sudo -u user1 /home/user1/cap-demo/chown root /home/user1/cap-demo-file
+  212  sudo setcap cap_chown=ep /home/user1/cap-demo/chown
+  213  su -u user1 
+  214  su - user1 
+  215  sudo -u user1 /home/user1/cap-demo/chown root /home/user1/cap-demo-file
+  216  sudo ls -l /home/user1/cap-demo-file
+  217  sudo getcap /home/user1/cap-demo/chown
+  218  sudo chown user1:students /home/user1/cap-demo-file
+  219  sudo setcap -r /home/user1/cap-demo/chown
+  220  sudo -u user1 /home/user1/cap-demo/chown root /home/user1/cat-demo-file
+  221  sudo -u user1 /home/user1/cap-demo/chown root /home/user1/cap-demo-file
+  222  sudo setcap cap_chown=ep /home/user1/cap-demo/chown
+  223  sudo -u user1 /home/user1/cap-demo/chown root /home/user1/cap-demo-file
+  224  sudo ls -l /home/user1/cap-demo-file
+  225  sudo getcap /home/user1/cap-demo/chown
+  226  command -v date
+  227  sudo visudo -f /etc/sudoers.d/user1-time
+  228  sudo chmod 440 /etc/sudoers.d/user1-time 
+  229  sudo visudo -c
+  230  sudo -l -U user1
+  231  su - user1 
+  232  mkdir -p ~/mephi-linux-security-2026
+  233  sudo stat /home/user1 > ~/mephi-linux-security-2026/stat.out
+  234  sudo stat /home/user1/suid-demo/cat >> ~/mephi-linux-security-2026/stat.out
+  235  sudo stat /home/user1/suid-demo/chown >> ~/mephi-linux-security-2026/stat.out
+  236  sudo stat /home/user1/cap-demo/chown >> ~/mephi-linux-security-2026/stat.out
+  237  sudo getcap /home/user1/cap-demo/chown > ~/mephi-linux-security-2026/getcap.out
+  238  cp ~/suid-file.out ~/privileged-processes.out ~/mephi-linux-security-2026/
+  239  cp ~/suid-files.out ~/privileged-processes.out ~/mephi-linux-security-2026/
+  240  history > ~/mephi-linux-security-2026/history.out
+  241  ls -l ~/mephi-linux-security-2026
+  242  mkdir -p ~/mephi-linux-security-2026/etc/sudoers.d
+  243  cp /etc/passwd /etc/group ~/mephi-linux-security-2026/etc/
+  244  sudo awk 'BEGIN {FS=OFS=":"} $2 != "" && $2 != "!" && $2 != "*" && $2 != "!!" {$2="REDACTED"} {print}' /etc/shadow > ~/mephi-linux-security-2026/etc/shadow
+  245  sudo cat /etc/sudoers > ~/mephi-linux-security-2026/etc/sudoers
+  246  sudo cat /etc/sudoers.d/user1-time > ~/mephi-linux-security-2026/etc/sudoers.d/user1-time
+  247  grep '^user1:' ~/mephi-linux-security-2026/etc/passwd 
+  248  cat ~/mephi-linux-security-2026/etc/sudoers.d/user1-time 
+  249  history -a
+  250  history > ~/mephi-linux-security-2026/history.out 
+  251  sudo reboot 
+  252  ps -eo ruid,euid,pid,ppid,comm,args | awk 'NR == 1 || ($1 >= 1000 && $1 < 65534 && $2 == 0)' | tee ~/privileged-processes.out
+  253  id user1 
+  254  sudo chage -l user1 
+  255  sudo ls -l /home/user1/suid-demo/cat
+  256  sudo getcap /home/user1/cap-demo/chown
+  257  sudo -l -U user1 
+  258  clear
+  259  printf '%s\n' 'M265303'
+  260  id user1
+  261  sudo ls -l /home/user1/suid-demo/cat
+  262  sudo getcap /home/user1/cap-demo/chown
+  263  duso -l -U user1
+  264  sudo -l -U user1
+  265  clear
+  266  printf '%s\n' 'M265303'
+  267  id user1
+  268  sudo ls -l /home/user1/suid-demo/cat
+  269  sudo getcap /home/user1/cap-demo/chown
+  270  sudo -l -U user1
+  271  gnome-screenshot -d 3 -f "$HOME/mephi-linux-security-2026/mephi-screenshot.png"
+  272  sudo apt install gnome-screenshot
+  273  gnome-screenshot -d 3 -f "$HOME/mephi-linux-security-2026/mephi-screenshot.png"
+  274  clear
+  275  printf '%s\n' 'M265303'
+  276  id user1
+  277  sudo ls -l /home/user1/suid-demo/cat
+  278  sudo getcap /home/user1/cap-demo/chown
+  279  sudo -l -U user1
+  280  clear
+  281  cd ~/mephi-linux-security-2026
+  282  file mephi-screenshot.png 
+  283  find . -type f
+  284  history > history.out 
+  285  git --version
+  286  sudo apt update 
+  287  sudo apt install git gh
+  288  cd ~/mephi-linux-security-2026
+  289  git init
+  290  git config --local user.name sckzzz
+  291  git config --local user.email "sckzzz@users.noreply.github.com"
+  292  gh auth login 
+  293  gh auth status 
+  294  printf '%s\n' '# Linux security homework' 'Student: M265303' 'Ubuntu in VirtualBox' 'Password hashes in etc/shadow are redacted.' > README.md
+  295  file mephi-screenshot.png 
+  296  find etc -type f
+  297  grep '^user1:' etc/shadow 
+  298  history > history.out 
